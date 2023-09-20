@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imramoul <imramoul@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 13:12:42 by imramoul          #+#    #+#             */
-/*   Updated: 2023/09/20 13:12:47 by imramoul         ###   ########.fr       */
+/*   Created: 2023/09/20 10:39:17 by imramoul          #+#    #+#             */
+/*   Updated: 2023/09/20 10:39:35 by imramoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_str_is_uppercase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+		if (str[i] >= 'A' && str[i] <= 'Z')
 		{
-			return (0);
+			str[i] += 32;
 		}
 		i++;
 	}
-	return (1);
+	return (str);
 }
-/*#include <stdio.h>
-int	main(void)
+/*
+#include <stdio.h>
+
+int main(void)
 {
-       printf("%d", ft_str_is_uppercase("ABCD"));
-       printf("\n%d", ft_str_is_uppercase("ABCdRaM"));
-       printf("\n%d", ft_str_is_uppercase("HEY123+"));
+	char str[] = "ABCDEF";
+	printf("%s", ft_strlowcase(str));
+	return 0;
 }*/
