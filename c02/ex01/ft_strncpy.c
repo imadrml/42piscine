@@ -36,7 +36,7 @@ int main(void)
     char source[] = "Hello, World!";
     char destination[20]; // Define a destination buffer
 
-    // Use ft_strncpy to copy at most 10 characters from source to destination
+    // Use ft_strncpy to copy at most 10 characters 
     ft_strncpy(destination, source, 10);
 
     // Print the result to verify
