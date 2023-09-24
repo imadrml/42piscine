@@ -54,6 +54,7 @@ char	*ft_strcapitalize(char *str)
 	int	i;
 
 	i = 0;
+	ft_strlowcase(str);
 	while (str[i] != '\0')
 	{
 		if (i == 0)
@@ -77,8 +78,7 @@ char	*ft_strcapitalize(char *str)
 int main(void)
 {
 	char str[] = "salut, coMment tu vas ? 42mots quarante-deux; cinquante+et+un";
-    ft_strlowcase(str);
-    printf("%s\n", ft_strlowcase(str));
+	printf("%s\n", ft_strlowcase(str));
 	printf("%s", ft_strcapitalize(str));
 	return 0;
 }*/
