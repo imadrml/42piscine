@@ -6,7 +6,7 @@
 /*   By: imramoul <imramoul@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 13:12:50 by imramoul          #+#    #+#             */
-/*   Updated: 2023/09/24 14:07:05 by imramoul         ###   ########.fr       */
+/*   Updated: 2023/09/27 12:31:24 by imramoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -18,20 +18,23 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	if (nb >= 0 && nb < 10)
+	if (nb == -2147483648)
 	{
-		ft_putchar (nb + '0');
+		write(1, "-2147483648", 11);
 	}
 	else if (nb < 0)
 	{
-		ft_putchar ('-');
-		ft_putnbr (nb * (-1));
+		ft_putchar('-');
+		nb = -nb;
+		ft_putnbr(nb);
+	}
+	else if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
 	else
-	{
-		ft_putnbr (nb / 10);
-		ft_putnbr (nb % 10);
-	}
+		ft_putchar(nb + '0');
 }
 /*
 int main(void)

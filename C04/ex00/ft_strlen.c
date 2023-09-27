@@ -23,7 +23,9 @@ int	ft_strlen(char *str)
 	return (i);
 }
 /*
- #include <stdio.h>
+#include <stdio.h>
+
+int	ft_strlen(char *str);
 int main(void)
 {
 char s1[] = "imad eddine";
