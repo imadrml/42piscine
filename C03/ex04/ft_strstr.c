@@ -6,33 +6,28 @@
 /*   By: imramoul <imramoul@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:47:56 by imramoul          #+#    #+#             */
-/*   Updated: 2023/09/24 11:07:18 by imramoul         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:36:32 by imramoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-char *ft_strstr(char *str, char *to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while ((*str) && (*to_find) )
+	if (to_find[j] == '\0')
+		return (str);
+	while (str[i] != '\0')
 	{
-		if (str[i+j] == to_find[j]);
-			i++;
+		while (str[i + j] == to_find[j] && str[i + j] != '\0')
 			j++;
+		if (to_find[j] == '\0')
+			return (str + i);
+		i++;
+		j = 0;
 	}
-	to_find[j] = '\0';
-	return (to_find[j]);
+	return (0);
 }
-/*
-#include <stdio.h>
-int main(void)
-{
-	char str1[] = "hello my name is imad eddine";
-	char tofind[] = "iamd";
-	printf("%s\n", ft_strstr(str1, tofind)); 
-}
-*/
